@@ -18,6 +18,10 @@ You can swap between manual (on a fader) or timed fades. The color picker itself
 
 ## How to use
 
+This picker relies on cue lists 100/ thru 110/; you could change these but it would take some work updating macros.
+Ideally I would use macros as easy-change variables, but I didn't do that to start, and it'll take some time for me to make the change.
+It also relies on macros 101 thru 107, 111 thru 120, and 200 thru 207. These are, again, all changeable, but could be frustrating to edit; they're called in cues, on the magic sheet, and (esp in the 200 range) from other macros.
+
 To use it in a show file of your own, you'll need to import:
 
 * fixtures (you'll need the dummy fixture profile)
@@ -26,11 +30,12 @@ To use it in a show file of your own, you'll need to import:
   * or you can use your own here; just be sure to
     * assign your filters on the cue lists
     * update the group buttons on the sheet
-* cue lists 100/ thru 110/
-  * if you put them somewhere else, you'll have to update the magic sheet; this isn't entirely painful, but it's not nothing
+* cue list 100/
+  * if you put it somewhere else, you'll have to update the magic sheet; this isn't entirely painful, but it's not nothing
 *macros
-  * 100 to assert all cue lists
   * 101 thru 107 to change cue timing
+  * 111 thru 120 to assert all picker cues simultaneously
+  * 200 thru 207 to build ("cook") color picker cues
 *color palettes 1 thru 25 if you want to
   * you can use your own if you want, but they won't match what the magic sheet shows
   * i'll fix that someday
@@ -56,6 +61,8 @@ To use it in a show file of your own, you'll need to import:
 
 
 ## notes on macro 10099 (set up color picker cues - this is what makes the color picker indicators work, using dummy channels)
+
+** you don't need to import this macro to your show file **
 
 ```
 MACRO 10099 Set Up Color Picker Cues
